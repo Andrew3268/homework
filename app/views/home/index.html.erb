@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <h1>Posts</h1>
+        <img src="http://img05.deviantart.net/f5ae/i/2007/252/2/8/fakebook_by_rebelx.jpg" height="100" width="300"><br><br>
            <form action="/post/create" method="POST">
             <div class="form-group">
-              <input type="text" name="tt" class="form-control" id="exampleInputEmail1" placeholder="Title here here">
+              <input type="text" name="tt" class="form-control" id="exampleInputEmail1" placeholder="Title">
             </div>
               <textarea name="ct" class="form-control" rows="5" placeholder="Content"></textarea><br>
               <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Submit</button><br><br>
@@ -18,7 +18,7 @@
                       <a href="/post/<%= post.id %>/edit"><button type="button" class="btn btn-success btn-xs">Edit</button></a>
                   </div><br><br>
                      <% post.comments.each do |comment| %>
-                       <%= comment.content %><a href ="/post/<%= comment.id %>/delete1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                       - <%= comment.content %><a href ="/post/<%= comment.id %>/delete1">__<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a><br>
                      <% end %>
                         <form action="/post/<%= post.id %>/comments" method="POST">
                             <textarea name="ct" class="form-control" rows="1" placeholder="Comment....."></textarea><br>
